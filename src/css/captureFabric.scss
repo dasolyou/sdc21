@@ -1,0 +1,123 @@
+
+.camera {
+  $self: &;
+  position: relative;
+  width: 60vw;
+  margin: 0 auto;
+  &__video {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    &-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 100%;
+      overflow: hidden;
+      // border: 1px solid brown;
+    }
+  }
+  &__canvas {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // border: 1px solid #ccc;
+    &-wrap {
+      position: absolute;
+      top: 0;
+      // top: 100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    &-inr {
+      position: relative;
+      .canvas-container {
+        display: inline-block;
+        border: 1px solid aquamarine;
+        overflow: hidden;
+      }
+    }
+    &--image {
+      display: none;
+    }
+    &--video {
+      display: none;
+    }
+  }
+  &__start {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-120%);
+  }
+  &__btn {
+    margin-top: 30px;
+    margin-left: 20px;
+    &:first-child {
+      margin-top: 0;
+    }
+    &-wrap {
+      // position: absolute;
+      // display: flex;
+      // flex-direction: column;
+      // top: 0;
+      // right: 0;
+      // transform: translateX(120%);
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      bottom: 0;
+      right: 0;
+      transform: translateY(120%);
+    }
+    &--hide {
+      display: none;
+    }
+  }
+  &__group {
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    // margin-top: 20px;
+    margin-right: 20px;
+    &-name {
+      border: none;
+      
+    }
+    &-stickers {
+      position: absolute;
+      display: none;
+      top: 30px;
+      left: 0;
+    }
+    &--active {
+      #{$self}__group-stickers {
+        display: flex;
+      }
+    }
+  }
+  &__stickers {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    &-wrap {
+      display: flex;
+      margin-top: 20px;
+      padding-bottom: 50px;
+      position: relative;
+      overflow: hidden;
+      overflow-x: scroll;
+    }
+    &--animate {
+      overflow: hidden;
+      img {
+        height: 120%;
+      }
+    }
+  }
+}
